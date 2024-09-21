@@ -1,0 +1,125 @@
+<!-- <?php
+   
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        include('dbcon.php');
+        $name = $_POST['name'];
+        $department = $_POST['department'];
+        $email = $_POST['email'];
+        $class = $_POST['class'];
+        $regno = $_POST['regno'];
+        $phoneno = $_POST['phoneno'];
+        $joining = $_POST['joining'];
+        $password = $_POST['password'];
+        // $Role = $_POST['Role'];
+     
+       
+        $exists=false;
+      if($exists==false){
+        $sql = "Insert into stulogin (name, department, email,class,regno,phoneno,joining,password) Values ('$name', '$department','$email','$class','$regno','$phoneno','$joining','$password')";
+        $result =  mysqli_query($con, $sql); 
+        }
+
+
+        if($result){        
+        echo "<script> alert('submitted successfully');{document.location.href=''};</script>";
+        }
+       else{
+        echo"<script> alert('not submitted');{document.location.href='contact/contact.php'};</script>";
+        }
+}
+
+
+?> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAAC ACCREDITATION SYSTEM</title>
+    <link rel="stylesheet" href="reg.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" />
+</head>
+
+<body>
+    <div class="nav-bar">
+        <nav>
+            <div class="logo">
+
+            </div>
+            <div class="text">
+                <h4>PSPS's</h4>
+                <h2>Rajendra Mane College of Engineering & Technology</h2>
+                <h3>Ambav, Ratnagiri Maharashtra</h3>
+            </div>
+        </nav>
+    </div>
+    <div class="con">
+
+        <p>Create your account here</p>
+
+        <div class="button">
+            <a href="Studregister.html"><button class="student" >Student</button></a>
+            <a href ="Facregister.html"><button >Faculty</button></a>
+        </div>
+    </div>
+    <form action="Studregister.php" method="POST">
+        <div class="con1">
+
+            <div class="ip">
+                <input type="text" required name="name">
+                <div class="label">Student Name:</div>
+            </div>
+            <div class="ip">
+                <input type="text" name="department" required>
+                <div class="label">Department(Computer)</div>
+            </div>
+            <div class="ip">
+                <input type="text" required name="email">
+                <div class="label">Email ID:</div>
+            </div>
+            <div class="ip">
+                <input type="text" name="class" required>
+                <div class="label">Class</div>
+            </div>
+            <div class="ip">
+                <input type="text" name="regno" required>
+                <div class="label">Reg No:</div>
+            </div>
+            <div class="ip">
+                <input type="text" required name="phoneno" max="10" min="10">
+                <div class="label">Phone No:</div>
+            </div>
+            <div class="ip">
+                <input type="text" required name="joining">
+                <div class="label">Year of Joining:</div>
+            </div>
+            <div class="ip">
+                <input type="password" required name="password" min="8" max="8">
+                <div class="label">Password</div>
+            </div>
+
+            
+
+
+        </div>
+        <div class="btn">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+
+
+    <div class="acc">
+        <p>Already have an account?<a href="/login">login</a></p>
+    </div>
+
+
+</body>
+
+</html>
